@@ -212,18 +212,20 @@
     </style>
 </head>
 <body>
-    <!-- Barra de navegación superior -->
-    <div style="position: fixed; top: 0; left: 0; right: 0; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; padding: 10px 20px;">
+    <!-- Barra de navegación superior mejorada -->
+    <div style="position: fixed; top: 0; left: 0; right: 0; background: linear-gradient(135deg, #4e7ae6, #7bc8a5); box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; padding: 15px 20px;">
         <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
-            <div style="display: flex; align-items: center; gap: 15px;">
-                <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: #4e7ae6; font-weight: bold;">
-                    <span style="font-size: 1.5rem; margin-right: 8px;">🐾</span>
-                    <span>PetUs</span>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: white; font-weight: bold; font-size: 1.2rem;">
+                    <span style="font-size: 2rem; margin-right: 10px;">🐾</span>
+                    <span>PetUs Admin</span>
                 </a>
             </div>
-            <div style="display: flex; gap: 10px;">
-                <a href="index.html" style="padding: 8px 16px; background: #f8f9fa; color: #333; text-decoration: none; border-radius: 20px; transition: all 0.3s;">🏠 Inicio</a>
-                <a href="budget.html" style="padding: 8px 16px; background: #7bc8a5; color: white; text-decoration: none; border-radius: 20px; transition: all 0.3s;">💰 Presupuesto</a>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <a href="index.html" style="padding: 10px 20px; background: rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 25px; transition: all 0.3s; font-weight: 500;">🏠 Página Principal</a>
+                <a href="budget.html" style="padding: 10px 20px; background: #f39c63; color: white; text-decoration: none; border-radius: 25px; transition: all 0.3s; font-weight: 500;">💰 Presupuesto</a>
+                <div style="width: 1px; height: 30px; background: rgba(255,255,255,0.3);"></div>
+                <span style="color: white; font-weight: 500;">Panel Administrativo</span>
             </div>
         </div>
     </div>
@@ -267,76 +269,118 @@
 
             <!-- Content -->
             <div class="content">
-                <h1>Dashboard</h1>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h1 style="color: #4e7ae6; font-size: 2.5rem;">Dashboard Administrativo</h1>
+                    <div style="display: flex; gap: 10px;">
+                        <button style="padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">📊 Generar Reporte</button>
+                        <button style="padding: 10px 20px; background: #17a2b8; color: white; border: none; border-radius: 5px; cursor: pointer;">⚙️ Configuración</button>
+                    </div>
+                </div>
                 
                 <!-- Stats Cards -->
                 <div class="dashboard-cards">
-                    <div class="card stat-card">
-                        <div class="stat-title">Usuarios Registrados</div>
-                        <div class="stat-number">1,254</div>
-                        <div>+25 este mes</div>
+                    <div class="card stat-card" style="background: linear-gradient(135deg, #4e7ae6, #7bc8a5); color: white;">
+                        <div class="stat-title" style="color: rgba(255,255,255,0.9);">Usuarios Registrados</div>
+                        <div class="stat-number" style="color: white;">1,254</div>
+                        <div style="color: rgba(255,255,255,0.8);">+25 este mes</div>
                     </div>
-                    <div class="card stat-card">
-                        <div class="stat-title">Mascotas Registradas</div>
-                        <div class="stat-number">1,893</div>
-                        <div>+42 este mes</div>
+                    <div class="card stat-card" style="background: linear-gradient(135deg, #f39c63, #e67e22); color: white;">
+                        <div class="stat-title" style="color: rgba(255,255,255,0.9);">Mascotas Registradas</div>
+                        <div class="stat-number" style="color: white;">1,893</div>
+                        <div style="color: rgba(255,255,255,0.8);">+42 este mes</div>
                     </div>
-                    <div class="card stat-card">
-                        <div class="stat-title">Suscripciones Activas</div>
-                        <div class="stat-number">843</div>
-                        <div>+18 este mes</div>
+                    <div class="card stat-card" style="background: linear-gradient(135deg, #28a745, #20c997); color: white;">
+                        <div class="stat-title" style="color: rgba(255,255,255,0.9);">Suscripciones Activas</div>
+                        <div class="stat-number" style="color: white;">843</div>
+                        <div style="color: rgba(255,255,255,0.8);">+18 este mes</div>
                     </div>
-                    <div class="card stat-card">
-                        <div class="stat-title">Recordatorios este mes</div>
-                        <div class="stat-number">5,721</div>
-                        <div>+324 esta semana</div>
+                    <div class="card stat-card" style="background: linear-gradient(135deg, #dc3545, #fd7e14); color: white;">
+                        <div class="stat-title" style="color: rgba(255,255,255,0.9);">Recordatorios este mes</div>
+                        <div class="stat-number" style="color: white;">5,721</div>
+                        <div style="color: rgba(255,255,255,0.8);">+324 esta semana</div>
                     </div>
                 </div>
                 
                 <!-- Recent Users -->
-                <div class="card">
-                    <h2>Usuarios Recientes</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Usuario</th>
-                                <th>Email</th>
-                                <th>Mascotas</th>
-                                <th>Plan</th>
-                                <th>Estado</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Ana Rodríguez</td>
-                                <td>ana@ejemplo.com</td>
-                                <td>2</td>
-                                <td>Premium</td>
-                                <td><span class="badge badge-success">Activo</span></td>
-                            </tr>
-                            <tr>
-                                <td>Carlos Méndez</td>
-                                <td>carlos@ejemplo.com</td>
-                                <td>1</td>
-                                <td>Básico</td>
-                                <td><span class="badge badge-success">Activo</span></td>
-                            </tr>
-                            <tr>
-                                <td>María González</td>
-                                <td>maria@ejemplo.com</td>
-                                <td>3</td>
-                                <td>Premium</td>
-                                <td><span class="badge badge-warning">Prueba</span></td>
-                            </tr>
-                            <tr>
-                                <td>Javier López</td>
-                                <td>javier@ejemplo.com</td>
-                                <td>1</td>
-                                <td>Básico</td>
-                                <td><span class="badge badge-danger">Inactivo</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="card" style="margin-bottom: 2rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <h2 style="color: #4e7ae6; margin: 0;">Usuarios Recientes</h2>
+                        <button style="padding: 8px 16px; background: #4e7ae6; color: white; border: none; border-radius: 5px; cursor: pointer;">Ver Todos</button>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background: #f8f9fa;">
+                                    <th style="padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6; color: #495057; font-weight: 600;">Usuario</th>
+                                    <th style="padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6; color: #495057; font-weight: 600;">Email</th>
+                                    <th style="padding: 15px; text-align: center; border-bottom: 2px solid #dee2e6; color: #495057; font-weight: 600;">Mascotas</th>
+                                    <th style="padding: 15px; text-align: center; border-bottom: 2px solid #dee2e6; color: #495057; font-weight: 600;">Plan</th>
+                                    <th style="padding: 15px; text-align: center; border-bottom: 2px solid #dee2e6; color: #495057; font-weight: 600;">Estado</th>
+                                    <th style="padding: 15px; text-align: center; border-bottom: 2px solid #dee2e6; color: #495057; font-weight: 600;">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 15px; font-weight: 500;">Ana Rodríguez</td>
+                                    <td style="padding: 15px; color: #6c757d;">ana@ejemplo.com</td>
+                                    <td style="padding: 15px; text-align: center; font-weight: 600; color: #4e7ae6;">2</td>
+                                    <td style="padding: 15px; text-align: center;"><span style="background: #d4edda; color: #155724; padding: 4px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">Premium</span></td>
+                                    <td style="padding: 15px; text-align: center;"><span class="badge badge-success">Activo</span></td>
+                                    <td style="padding: 15px; text-align: center;">
+                                        <button style="background: #17a2b8; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; margin-right: 5px;">Ver</button>
+                                        <button style="background: #ffc107; color: #212529; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Editar</button>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 15px; font-weight: 500;">Carlos Méndez</td>
+                                    <td style="padding: 15px; color: #6c757d;">carlos@ejemplo.com</td>
+                                    <td style="padding: 15px; text-align: center; font-weight: 600; color: #4e7ae6;">1</td>
+                                    <td style="padding: 15px; text-align: center;"><span style="background: #cce5ff; color: #004085; padding: 4px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">Básico</span></td>
+                                    <td style="padding: 15px; text-align: center;"><span class="badge badge-success">Activo</span></td>
+                                    <td style="padding: 15px; text-align: center;">
+                                        <button style="background: #17a2b8; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; margin-right: 5px;">Ver</button>
+                                        <button style="background: #ffc107; color: #212529; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Editar</button>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 15px; font-weight: 500;">María González</td>
+                                    <td style="padding: 15px; color: #6c757d;">maria@ejemplo.com</td>
+                                    <td style="padding: 15px; text-align: center; font-weight: 600; color: #4e7ae6;">3</td>
+                                    <td style="padding: 15px; text-align: center;"><span style="background: #d4edda; color: #155724; padding: 4px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">Premium</span></td>
+                                    <td style="padding: 15px; text-align: center;"><span class="badge badge-warning">Prueba</span></td>
+                                    <td style="padding: 15px; text-align: center;">
+                                        <button style="background: #17a2b8; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; margin-right: 5px;">Ver</button>
+                                        <button style="background: #ffc107; color: #212529; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px; font-weight: 500;">Javier López</td>
+                                    <td style="padding: 15px; color: #6c757d;">javier@ejemplo.com</td>
+                                    <td style="padding: 15px; text-align: center; font-weight: 600; color: #4e7ae6;">1</td>
+                                    <td style="padding: 15px; text-align: center;"><span style="background: #cce5ff; color: #004085; padding: 4px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">Básico</span></td>
+                                    <td style="padding: 15px; text-align: center;"><span class="badge badge-danger">Inactivo</span></td>
+                                    <td style="padding: 15px; text-align: center;">
+                                        <button style="background: #17a2b8; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; margin-right: 5px;">Ver</button>
+                                        <button style="background: #ffc107; color: #212529; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Editar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Additional Dashboard Cards -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <div class="card" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+                        <h3 style="margin-bottom: 1rem; color: white;">Ingresos del Mes</h3>
+                        <div style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">$12,450</div>
+                        <div style="color: rgba(255,255,255,0.8);">+15% vs mes anterior</div>
+                    </div>
+                    <div class="card" style="background: linear-gradient(135deg, #f093fb, #f5576c); color: white;">
+                        <h3 style="margin-bottom: 1rem; color: white;">Recordatorios Enviados</h3>
+                        <div style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">3,247</div>
+                        <div style="color: rgba(255,255,255,0.8);">+8% vs mes anterior</div>
+                    </div>
                 </div>
             </div>
         </div>

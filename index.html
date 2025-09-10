@@ -432,19 +432,39 @@
         </div>
     </section>
 
-    <section class="admin-access" style="background-color: #f8f9fa; padding: 3rem 0;">
+    <section class="admin-access" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 4rem 0;">
         <div class="container">
             <div class="section-title">
-                <h2>Acceso a Herramientas</h2>
-                <p>Accede a las herramientas administrativas y de presupuesto</p>
+                <h2 style="color: #4e7ae6; font-size: 2.5rem; margin-bottom: 1rem;">🚀 Acceso a Herramientas</h2>
+                <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">Accede a las herramientas administrativas y de presupuesto de PetUs</p>
             </div>
-            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                <a href="admin.html" class="btn" style="background-color: var(--primary); padding: 1rem 2rem; font-size: 1.1rem;">
-                    🔧 Panel Administrativo
-                </a>
-                <a href="budget.html" class="btn" style="background-color: var(--secondary); padding: 1rem 2rem; font-size: 1.1rem;">
-                    💰 Ver Presupuesto
-                </a>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">🔧</div>
+                    <h3 style="color: #4e7ae6; margin-bottom: 1rem; font-size: 1.5rem;">Panel Administrativo</h3>
+                    <p style="color: #666; margin-bottom: 2rem;">Gestiona usuarios, mascotas, suscripciones y estadísticas de la aplicación</p>
+                    <a href="admin.html" class="btn" style="background: linear-gradient(135deg, #4e7ae6, #7bc8a5); padding: 1rem 2rem; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(78, 122, 230, 0.3);">
+                        Acceder al Panel
+                    </a>
+                </div>
+                
+                <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">💰</div>
+                    <h3 style="color: #7bc8a5; margin-bottom: 1rem; font-size: 1.5rem;">Presupuesto y Precios</h3>
+                    <p style="color: #666; margin-bottom: 2rem;">Consulta los planes de desarrollo, precios y costos de implementación</p>
+                    <a href="budget.html" class="btn" style="background: linear-gradient(135deg, #7bc8a5, #f39c63); padding: 1rem 2rem; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(123, 200, 165, 0.3);">
+                        Ver Presupuesto
+                    </a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="color: #666; font-size: 1.1rem; margin-bottom: 1rem;">¿Necesitas más información?</p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#contact" style="padding: 0.8rem 1.5rem; background: #f39c63; color: white; text-decoration: none; border-radius: 25px; font-weight: 500;">📞 Contactar</a>
+                    <a href="#features" style="padding: 0.8rem 1.5rem; background: #17a2b8; color: white; text-decoration: none; border-radius: 25px; font-weight: 500;">ℹ️ Más Info</a>
+                </div>
             </div>
         </div>
     </section>
