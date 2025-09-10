@@ -1,0 +1,16 @@
+# GitHub Pages configuration
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Site settings
+title: PetUs - Salud y Bienestar para tu Mascota
+description: Aplicación web para el cuidado y bienestar de mascotas
+baseurl: "/Pet-Us"
+url: "https://leomos2022.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
