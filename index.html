@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetUs - Salud y Bienestar para tu Mascota</title>
+    <style>
+        :root {
+            --primary: #4e7ae6;
+            --secondary: #7bc8a5;
+            --accent: #f39c63;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%234e7ae6" fill-opacity="0.1" d="M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>') no-repeat bottom;
+            background-size: contain;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: #555;
+        }
+        
+        .features {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .pricing {
+            background-color: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        .pricing-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .popular {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transform: rotate(45deg) translateX(1.3rem) translateY(-1.5rem);
+            width: 150px;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pricing-features li:before {
+            content: "✓";
+            color: var(--success);
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .cta {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn-light {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">🐾</span>
+                <h1>PetUs</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#features">Funcionalidades</a></li>
+                    <li><a href="#pricing">Planes</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="#signup" class="btn">Comenzar Ahora</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>La salud de tu animal de compañía en tu móvil</h2>
+            <p>Protegiendo a tus mascotas con recordatorios inteligentes, seguimiento de salud y recomendaciones personalizadas para una tenencia responsable.</p>
+            <a href="#signup" class="btn">Registrarse Gratis</a>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Funcionalidades Principales</h2>
+                <p>Todo lo que necesitas para el cuidado y bienestar de tu mascota en una sola aplicación</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💉</div>
+                    <h3>Módulo de Salud</h3>
+                    <p>Recordatorios de vacunación, desparasitación, higiene oral y alertas según la etapa de vida de tu mascota.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>Módulo de Manejo</h3>
+                    <p>Seguimiento de condición corporal, cálculo de ración alimenticia adecuada y manejo hídrico.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">😊</div>
+                    <h3>Módulo de Bienestar</h3>
+                    <p>Evaluación de necesidades biológicas según especie y etograma para un bienestar integral.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Planes y Precios</h2>
+                <p>Elige el plan que mejor se adapte a tus necesidades</p>
+            </div>
+            <div class="pricing-options">
+                <div class="pricing-card">
+                    <h3>Plan Básico</h3>
+                    <div class="price">$5/mes</div>
+                    <ul class="pricing-features">
+                        <li>Hasta 2 mascotas</li>
+                        <li>Recordatorios básicos</li>
+                        <li>App móvil y web</li>
+                        <li>Soporte por email</li>
+                    </ul>
+                    <a href="#signup" class="btn">Empezar</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="popular">POPULAR</div>
+                    <h3>Plan Premium</h3>
+                    <div class="price">$10/mes</div>
+                    <ul class="pricing-features">
+                        <li>Mascotas ilimitadas</li>
+                        <li>Todos los recordatorios</li>
+                        <li>Alertas inteligentes</li>
+                        <li>Informes de salud</li>
+                        <li>Soporte prioritario</li>
+                    </ul>
+                    <a href="#signup" class="btn">Empezar</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Plan Veterinario</h3>
+                    <div class="price">$25/mes</div>
+                    <ul class="pricing-features">
+                        <li>Gestión de clientes</li>
+                        <li>Historiales médicos</li>
+                        <li>Recordatorios automáticos</li>
+                        <li>Panel de administración</li>
+                        <li>Soporte 24/7</li>
+                    </ul>
+                    <a href="#signup" class="btn">Empezar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="signup">
+        <div class="container">
+            <h2>Comienza a cuidar mejor de tu mascota</h2>
+            <p>Regístrate hoy y obtén 30 días gratis de nuestro plan Premium para experimentar todos los beneficios</p>
+            <a href="#" class="btn btn-light">Crear Cuenta Gratis</a>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PetUs</h3>
+                    <p>La aplicación líder para el cuidado y bienestar de tus animales de compañía.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <p><a href="#features">Funcionalidades</a></p>
+                    <p><a href="#pricing">Planes</a></p>
+                    <p><a href="#">Descargar App</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Email: info@petus.com</p>
+                    <p>Teléfono: +1 234 567 890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 PetUs - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
